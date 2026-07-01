@@ -1,0 +1,11 @@
+^hctools\.Rproj$
+^\.Rproj\.user$
+README.md
+tmp/
+^data-raw$
+^LICENSE\.md$
+^dev$
+^\.github$
+^revdep$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
