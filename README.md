@@ -48,7 +48,7 @@ save_plot(file.path(tempdir(), "piper.png"), type = "piper", plot = p)
 
 ```r
 # Install package
-install.packages("hydrochem"")
+install.packages("hydrochem")
 # Load package
 library(hydrochem)
 
