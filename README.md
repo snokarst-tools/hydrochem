@@ -49,6 +49,7 @@ save_plot(file.path(tempdir(), "piper.png"), type = "piper", plot = p)
 ```r
 # Install package
 install.packages("hydrochem")
+
 # Load package
 library(hydrochem)
 
@@ -77,11 +78,13 @@ stat_summary_table2 <- stat_summary(
   data_qc_stat, 
   stats = c("min", "P25", "med", "P75", "max", "mad", "n", "NA_percent"),
   na.rm = T)
+  
 # Show the first rows of the statistical summary
 head(stat_summary_table2)
 
 # Add a water type column with only the dominant cation and anion 
 data_qc_num$WT <- water_type(data_qc_num, format = "short")
+
 # Add a TDS column by considering major ions and SiO2
 data_qc_num$TDS <- tds(data_qc_num, method = "major_si")
 
@@ -102,13 +105,16 @@ wt_unsuitable <- data_qc_num %>%
 
 # Generate a Piper diagram using the default graphical options 
 piper1 <- plot_piper(data_qc_num, group = "Hydro_cond")
+
 # Save the Piper diagram as a PNG file (Figure 1a)
 save_plot("plot_piper1.png", type = "piper", plot = piper1)
+
 # Create a custom categorical variable for TDS
 data_qc_num$TDS_cat <- cut(
   data_qc_num$TDS,
   breaks = c(-Inf, 750, 1500, Inf),
   labels = c("<750", "750-1500", ">1500"))
+  
 # Generate a Piper diagram with customized graphical options 
 piper2 <- plot_piper(data_qc_num, 
            group = "TDS_cat", 
@@ -118,6 +124,7 @@ piper2 <- plot_piper(data_qc_num,
            color = c("black","black","white"),
            size = c(1,2,5),
            shape = c(21,21,21))
+           
 # Save the customized Piper diagram as a PNG file (Figure 1b)
 save_plot("plot_piper2.png", type = "piper", plot = piper2)
 
@@ -156,6 +163,7 @@ plot_collins(mean_cluster,
              ylab = "% meq/L",
              border_color = "black",
              legend.position = "right")
+             
 # Generate Stiff diagrams
 plot_stiff(mean_cluster,
            nrow = 2,
@@ -164,6 +172,7 @@ plot_stiff(mean_cluster,
            fill = "cadetblue2",
            scales = "free_x",
            xlab = "meq/L")
+           
 # Generate a Schoeller diagram
 plot_schoeller(mean_cluster)
 ```
