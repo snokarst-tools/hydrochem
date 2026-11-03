@@ -1,0 +1,13 @@
+bibentry(
+  bibtype = "Article",
+  key     = "cinkus2026hydrochem",
+  header  = "To cite hydrochem in publications, please use:",
+  title   = "{hydrochem}, an Integrated {R} Package for the Analysis and Visualization of Hydrochemical Data",
+  author  = c(
+    person("Guillaume", "Cinkus"),
+    person("Raphaël", "Bondu")
+  ),
+  journal = "Groundwater",
+  year    = "2026",
+  doi     = "10.1111/gwat.70110"
+)
