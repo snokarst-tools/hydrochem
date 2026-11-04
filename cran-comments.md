@@ -1,40 +1,22 @@
-## R CMD check results
+## Submission summary
 
-Duration: 42.2s
-
-0 errors ✔ | 0 warnings ✔ | 0 notes ✔
-
-R CMD check succeeded
+Minor update: adds a CITATION file referencing the companion article
+published in Groundwater (doi:10.1111/gwat.70110). No code changes.
 
 ## Test environments
 
-* Local: macOS, R 4.4.x
-* R-hub / GitHub Actions (R-devel):
-  - linux (ubuntu-latest) — OK
-  - macos (macos-13) — OK
-  - windows (windows-latest) — OK
+* Local: Debian Linux, R 4.5.0
 
-## Comments
+## R CMD check results
 
-This is a resubmission addressing CRAN reviewer comments from the prior submission:
+0 errors | 0 warnings | 1 note
 
-* Added references describing the methods implemented in the package 
-  to the Description field of DESCRIPTION, in the requested 
-  `authors (year) <doi:...>` format.
+* checking for future file timestamps ... NOTE
+  unable to verify current time
 
-* Replaced remaining \dontrun{} with \donttest{} in examples that are 
-  executable but take a small amount of time to run; examples that 
-  execute in under 5 seconds have been unwrapped entirely.
-
-* Removed the default/non-tempdir file path in save_plot()'s examples; 
-  all examples, vignettes, and tests now write only to tempdir(), and 
-  no exported function has a default path that writes to the user's 
-  home filespace.
-
-The package was prepared following the checklist from 
-https://github.com/ThinkR-open/prepare-for-cran to ensure 
-compliance with CRAN policies.
+  This NOTE is specific to the local machine (time server not reachable)
+  and is unrelated to the package.
 
 ## Reverse dependencies
 
-Not applicable, this is a new package with no reverse dependencies.
+There are currently no reverse dependencies on CRAN.
