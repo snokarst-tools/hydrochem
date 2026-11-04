@@ -9,3 +9,5 @@ tmp/
 ^revdep$
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^LICENSE$
+^hydrochem\.Rproj$
